@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Services by V P Singhal & Co. ISLA Pvt. Ltd. – Motor Claims, Non-Motor Claims, Salvage Management, Claims Mitra, and Pragati Risk & Management Partners."/>
+  <title>Services | V P Singhal & Co. ISLA Pvt. Ltd.</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="icon" type="image/png" href="assets/logo.png"/>
+  <style>
+    /* ── Services page extra styles ── */
+    .services-nav {
+      background: var(--dark);
+      padding: 0 24px;
+      position: sticky;
+      top: 72px;
+      z-index: 900;
+    }
+    .services-nav-inner {
+      display: flex;
+      gap: 4px;
+      max-width: 1200px;
+      margin: 0 auto;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .services-nav-inner::-webkit-scrollbar { display: none; }
+    .services-nav a {
+      padding: 16px 24px;
+      color: rgba(255,255,255,0.65);
+      font-size: 0.88rem;
+      font-weight: 700;
+      white-space: nowrap;
+      border-bottom: 3px solid transparent;
+      transition: var(--transition);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+    .services-nav a:hover,
+    .services-nav a.active {
+      color: var(--orange);
+      border-bottom-color: var(--orange);
+    }
+
+    /* ── Full-width hero banner for services ── */
+    .service-hero-banner {
+      position: relative;
+      height: 320px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
+    .service-hero-banner img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: brightness(0.4);
+    }
+    .service-hero-banner .banner-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 48px;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .service-hero-banner .banner-content h2 { color: var(--white); margin-bottom: 12px; }
+    .service-hero-banner .banner-content p  { color: rgba(255,255,255,0.8); font-size: 1.05rem; }
+    .service-hero-banner .color-tag {
+      display: inline-block;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+    }
+
+    /* Grid of claim types */
+    .claims-type-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 36px;
+    }
+    .claim-pill {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 18px 20px;
+      background: var(--white);
+      border-radius: var(--radius);
+      border: 2px solid var(--grey-mid);
+      transition: var(--transition);
+      cursor: default;
+    }
+    .claim-pill:hover {
+      border-color: var(--orange);
+      box-shadow: var(--shadow);
+      transform: translateX(4px);
+    }
+    .claim-pill .pill-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .claim-pill h4 { font-size: 0.95rem; color: var(--black); margin: 0; font-weight: 700; }
+
+    /* Salvage detailed cards */
+    .salvage-detail-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      transition: var(--transition);
+      margin-bottom: 28px;
+    }
+    .salvage-detail-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); }
+    .salvage-detail-card .sdc-img {
+      background: var(--grey);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+    }
+    .salvage-detail-card .sdc-img img {
+      width: 100%;
+      max-width: 220px;
+      max-height: 180px;
+      height: auto;
+      object-fit: contain;
+    }
+    .salvage-detail-card .sdc-body { padding: 32px; }
+    .salvage-detail-card .sdc-body .sdc-tag {
+      display: inline-block;
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 14px;
+    }
+    .salvage-detail-card .sdc-body h3 { color: var(--black); margin-bottom: 12px; }
+    .salvage-detail-card .sdc-body p { font-size: 0.92rem; margin: 0 0 16px; }
+    .salvage-detail-card .sdc-body a { color: var(--orange); font-weight: 700; font-size: 0.9rem; }
+
+    @media (max-width: 640px) {
+      .salvage-detail-card { grid-template-columns: 1fr; }
+      .claims-type-grid { grid-template-columns: 1fr; }
+      .service-hero-banner { height: 240px; }
+      .service-hero-banner .banner-content { padding: 0 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════ NAVBAR ═══════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo.png" alt="V P Singhal & Co. Logo"/>
+        <div class="nav-logo-text">
+          <span class="brand">V P Singhal &amp; Co.</span>
+          <span class="sub">ISLA Private Limited</span>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html" class="active">Services</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="nav-cta">
+        <a href="contact.html#assign" class="btn btn-orange">Assign New Case</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html#assign" class="btn btn-orange">Assign New Case</a>
+  </div>
+
+  <!-- ═══════════════════════ PAGE HERO ═══════════════════════ -->
+  <section class="page-hero">
+    <h1>Our Services</h1>
+    <p>Comprehensive insurance surveying and loss assessment solutions — from Motor Claims to Salvage Management, delivered across PAN India.</p>
+  </section>
+
+  <!-- ═══════════════════════ SERVICES STICKY NAV ═══════════════════════ -->
+  <nav class="services-nav">
+    <div class="services-nav-inner">
+      <a href="#motor" class="active">Motor Claims</a>
+      <a href="#non-motor">Non Motor Claims</a>
+      <a href="#salvage">Salvage &amp; Auxiliary</a>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════ MOTOR CLAIMS ═══════════════════════ -->
+  <section id="motor" class="section" style="background:var(--white);">
+    <div class="service-hero-banner" style="margin-bottom:0;">
+      <img src="assets/hero.png" alt="Motor Claims"/>
+      <div class="banner-content">
+        <span class="color-tag" style="background:var(--orange); color:white;">Motor Claims</span>
+        <h2>Motor Claims</h2>
+        <p>Expert surveying for all types of motor vehicle accidents, valuations and verifications across India.</p>
+      </div>
+    </div>
+    <div class="container" style="padding-top:56px;">
+      <div class="motor-layout">
+        <div class="reveal">
+          <h3 style="color:var(--black); font-size:1.4rem; margin-bottom:12px;">Complete Motor Claims Services</h3>
+          <p style="margin-bottom:24px;">From spot inspections at accident sites to final settlement surveys, our motor claims division offers end-to-end surveying solutions. Led by the legacy of Mr. V P Singhal — a veteran in motor claims — our team handles everything from two-wheelers to heavy commercial vehicles.</p>
+          <div class="claims-type-grid">
+            <div class="claim-pill">
+              <div class="pill-dot" style="background:var(--orange);"></div>
+              <h4>Final Surveys</h4>
+            </div>
+            <div class="claim-pill">
+              <div class="pill-dot" style="background:var(--red);"></div>
+              <h4>Spot Inspections</h4>
+            </div>
+            <div class="claim-pill">
+              <div class="pill-dot" style="background:#A1887F;"></div>
+              <h4>Vehicle Valuation</h4>
+            </div>
+            <div class="claim-pill">
+              <div class="pill-dot" style="background:#F9A825;"></div>
+              <h4>Accident Verification</h4>
+            </div>
+            <div class="claim-pill">
+              <div class="pill-dot" style="background:var(--sky);"></div>
+              <h4>Vehicle Pre Insurance Inspections</h4>
+            </div>
+            <div class="claim-pill">
+              <div class="pill-dot" style="background:var(--teal);"></div>
+              <h4>Third Party Verifications</h4>
+            </div>
+          </div>
+          <a href="contact.html#assign" class="btn btn-orange" style="margin-top:32px;">Assign a Motor Claim →</a>
+        </div>
+        <div class="motor-img reveal reveal-delay-2">
+          <img src="assets/hero.png" alt="Motor Claims"/>
+        </div>
+      </div>
+
+      <!-- Colorful sub-grid (from photo) -->
+      <div class="motor-sub-grid reveal" style="margin-top:56px;">
+        <div class="motor-sub-card msc-orange">Final Surveys</div>
+        <div class="motor-sub-card msc-red">Spot Inspections</div>
+        <div class="motor-sub-card msc-mauve">Vehicle Valuation</div>
+        <div class="motor-sub-card msc-yellow" style="color:var(--black);">Accident Verification</div>
+        <div class="motor-sub-card msc-blue">Vehicle Pre Insurance Inspections</div>
+        <div class="motor-sub-card msc-teal">Third Party Verifications</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ NON MOTOR CLAIMS ═══════════════════════ -->
+  <section id="non-motor" class="section" style="background:var(--grey);">
+    <div class="service-hero-banner" style="margin-bottom:0;">
+      <img src="assets/Non motor claims.jpeg" alt="Non Motor Claims"/>
+      <div class="banner-content">
+        <span class="color-tag" style="background:#FDD835; color:var(--black);">Non Motor Claims</span>
+        <h2>Non Motor Claims</h2>
+        <p>From fire and engineering to marine cargo — comprehensive non-motor loss assessment expertise.</p>
+      </div>
+    </div>
+    <div class="container" style="padding-top:56px;">
+      <div class="non-motor-layout">
+        <div class="reveal">
+          <h3 style="color:var(--black); font-size:1.4rem; margin-bottom:12px;">Full-Spectrum Non-Motor Services</h3>
+          <p style="margin-bottom:24px;">Our non-motor claims division is led by Piyush Singhal, who brings deep expertise in Engineering, Fire, and Marine Cargo assessments. We handle claims of all scales — from factory fires to complex marine cargo losses — with meticulous precision and documented transparency.</p>
+          <div class="claims-type-grid">
+            <div class="claim-pill">
+              <div class="pill-dot" style="background:var(--orange);"></div>
+              <h4>Fire Claims / LOP</h4>
+            </div>
+            <div class="claim-pill">
+              <div class="pill-dot" style="background:var(--red);"></div>
+              <h4>Engineering Claims</h4>
+            </div>
+            <div class="claim-pill">
+              <div class="pill-dot" style="background:#A1887F;"></div>
+              <h4>Marine Cargo Claims</h4>
+            </div>
+            <div class="claim-pill">
+              <div class="pill-dot" style="background:#FDD835;"></div>
+              <h4>Pre Insurance Inspections</h4>
+            </div>
+            <div class="claim-pill">
+              <div class="pill-dot" style="background:var(--sky);"></div>
+              <h4>Investigations</h4>
+            </div>
+            <div class="claim-pill">
+              <div class="pill-dot" style="background:var(--teal);"></div>
+              <h4>Valuations</h4>
+            </div>
+          </div>
+          <a href="contact.html#assign" class="btn btn-teal" style="margin-top:32px;">Assign a Non-Motor Claim →</a>
+        </div>
+        <div class="non-motor-right reveal reveal-delay-2">
+          <img src="assets/Non motor claims.jpeg" alt="Non Motor Claims" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); width:100%; object-fit:cover; max-height:380px;"/>
+        </div>
+      </div>
+
+      <!-- Colorful sub-grid (from photo) -->
+      <div class="non-motor-sub-grid reveal" style="margin-top:56px;">
+        <div class="motor-sub-card nmsc-orange">Fire Claims / LOP</div>
+        <div class="motor-sub-card nmsc-red">Engineering Claims</div>
+        <div class="motor-sub-card nmsc-mauve">Marine Cargo Claims</div>
+        <div class="motor-sub-card nmsc-yellow">Pre Insurance Inspections</div>
+        <div class="motor-sub-card nmsc-blue">Investigations</div>
+        <div class="motor-sub-card nmsc-teal">Valuations</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══SALVAGE & AUXILIARY -->
+  <section id="salvage" class="section" style="background:var(--orange);">
+    <div class="container">
+      <div style="text-align:center; margin-bottom:48px;">
+        <div class="badge" style="background:var(--black); color:var(--orange);">Salvage &amp; Auxiliary Services</div>
+        <h2 style="color:var(--white); margin-top:8px;">Our Partner &amp; Auxiliary Platforms</h2>
+        <p style="color:rgba(255,255,255,0.88); max-width:600px; margin:12px auto 0;">Beyond surveying, we extend our value through strategic partnerships and innovative technology platforms to serve the complete insurance claim ecosystem.</p>
+      </div>
+
+      <!-- Salvage Managers -->
+      <div class="salvage-detail-card reveal">
+        <div class="sdc-img">
+          <img src="assets/slavagemgmt.png" alt="Salvage Managers"/>
+        </div>
+        <div class="sdc-body">
+          <span class="sdc-tag" style="background:rgba(245,124,0,0.12); color:var(--orange);">Salvage Management</span>
+          <h3>Salvage Managers</h3>
+          <p><em>"Making the most out of what is left."</em> Salvage Managers is our dedicated salvage arm specializing in the disposal, valuation, and recovery of damaged goods, machinery, vehicles, and assets post-claim settlement.</p>
+          <p>We maximize recovery value for insurers and insured alike, using a transparent auction and direct-sale model with PAN India reach.</p>
+          <a href="contact.html" class="btn btn-orange" style="display:inline-flex; margin-top:8px;">Enquire About Salvage →</a>
+        </div>
+      </div>
+
+      <!-- Pragati Risk -->
+      <div class="salvage-detail-card reveal">
+        <div class="sdc-img" style="background:#E8F5E9;">
+          <img src="assets/Pragati.png" alt="Pragati Risk & Management Partners"/>
+        </div>
+        <div class="sdc-body">
+          <span class="sdc-tag" style="background:rgba(0,131,143,0.1); color:var(--teal);">Risk Management</span>
+          <h3>Pragati Risk &amp; Management Partners</h3>
+          <p>Pragati Risk &amp; Management Partners is our affiliated risk consultancy providing pre-loss risk surveys, risk improvement recommendations, and process consulting for industries including manufacturing, warehousing, and logistics.</p>
+          <p>We help businesses assess and mitigate risks before claims occur — a proactive approach to insurance management.</p>
+          <a href="contact.html" class="btn btn-teal" style="display:inline-flex; margin-top:8px;">Enquire About Risk Services →</a>
+        </div>
+      </div>
+
+      <!-- Claims Mitra -->
+      <div class="salvage-detail-card reveal">
+        <div class="sdc-img" style="background:#F3E5F5;">
+          <img src="assets/claimsmitra.png" alt="Claims Mitra Inspection App"/>
+        </div>
+        <div class="sdc-body">
+          <span class="sdc-tag" style="background:rgba(156,39,176,0.1); color:var(--purple);">Technology Platform</span>
+          <h3>ClaimsMitra — Inspection App</h3>
+          <p>ClaimsMitra is our proprietary digital inspection platform that enables real-time, geo-tagged, photo-documented claim surveys from any location in India. It streamlines the inspection workflow, reduces turnaround time, and ensures tamper-proof evidence collection.</p>
+          <p>Used by our field surveyors for Motor, Non-Motor, and Marine claims alike — ClaimsMitra is the future of insurance inspection.</p>
+          <a href="contact.html" class="btn" style="background:var(--purple); color:white; display:inline-flex; margin-top:8px;">Learn About Claims Mitra →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ CTA ═══════════════════════ -->
+  <section class="section" style="background:var(--dark); text-align:center;">
+    <div class="container">
+      <h2 class="reveal" style="color:var(--white); margin-bottom:16px;">Need Expert Claims Assistance?</h2>
+      <p class="reveal" style="max-width:500px; margin:0 auto 32px; color:rgba(255,255,255,0.75);">Whether it's a motor accident, fire loss, or complex engineering claim — our team is ready to help you achieve a fair and swift settlement.</p>
+      <div class="reveal" style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+        <a href="contact.html#assign" class="btn btn-orange">Assign New Case</a>
+        <a href="contact.html" class="btn btn-white">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/logo.png" alt="V P Singhal & Co. Logo"/>
+        <p>V P Singhal & Co. ISLA Pvt. Ltd. is a leading insurance surveying and loss assessment firm with over 25 years of trusted expertise across India.</p>
+        <div class="footer-social">
+          <a href="mailto:office@vpsinghal.com" title="Email">✉️</a>
+          <a href="tel:+919811047785" title="Call">📞</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#motor">Motor Claims</a></li>
+          <li><a href="#non-motor">Non Motor Claims</a></li>
+          <li><a href="#salvage">Salvage Mgmt.</a></li>
+          <li><a href="#salvage">Claims Mitra</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <div class="footer-contact-item">
+          <span class="icon">📍</span>
+          <p>C 56, Sector 8, NOIDA UP (Delhi NCR) 201301, India</p>
+        </div>
+        <div class="footer-contact-item">
+          <span class="icon">✉️</span>
+          <p><a href="mailto:office@vpsinghal.com">office@vpsinghal.com</a></p>
+        </div>
+        <div class="footer-contact-item">
+          <span class="icon">📞</span>
+          <p><a href="tel:+919811047785">+91 9811047785</a><br/><a href="tel:+919810111359">+91 9810111359</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 V P Singhal &amp; Co. ISLA Pvt. Ltd. All rights reserved.</p>
+      <p>Designed with ❤️ for India's trusted claims experts</p>
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      mobileNav.classList.toggle('open');
+    });
+    // Services sticky nav active state
+    const serviceLinks = document.querySelectorAll('.services-nav a');
+    const sections = ['motor','non-motor','salvage'].map(id => document.getElementById(id));
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(s => {
+        if(s && window.scrollY >= s.offsetTop - 160) current = s.id;
+      });
+      serviceLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+      });
+    });
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
