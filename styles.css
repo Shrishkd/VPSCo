@@ -319,7 +319,7 @@ p  { font-size: 1rem; line-height: 1.8; color: var(--text-light); }
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url('assets/Services and logo.jpeg');
+  background-image: url('assets/hero.png');
   background-size: cover;
   background-position: center;
   filter: brightness(0.45);
@@ -443,6 +443,7 @@ p  { font-size: 1rem; line-height: 1.8; color: var(--text-light); }
   width: 100%;
   border-radius: var(--radius-lg);
   object-fit: cover;
+  object-position: center;
   max-height: 500px;
 }
 .about-img-badge {
@@ -716,11 +717,11 @@ p  { font-size: 1rem; line-height: 1.8; color: var(--text-light); }
 }
 .director-photo {
   width: 100%;
-  max-width: 340px;
-  aspect-ratio: 4/5;
+  max-width: 420px;
+  aspect-ratio: 3/2;
   border-radius: var(--radius-lg);
   object-fit: cover;
-  object-position: center top;
+  object-position: center;
   box-shadow: var(--shadow-lg);
 }
 .director-name-card {
@@ -730,7 +731,7 @@ p  { font-size: 1rem; line-height: 1.8; color: var(--text-light); }
   padding: 20px 28px;
   text-align: center;
   width: 100%;
-  max-width: 340px;
+  max-width: 420px;
 }
 .director-name-card h3 { font-size: 1.3rem; color: var(--white); margin-bottom: 4px; }
 .director-name-card p { font-size: 0.85rem; color: rgba(255,255,255,0.88); margin: 0; }
@@ -871,7 +872,7 @@ p  { font-size: 1rem; line-height: 1.8; color: var(--text-light); }
   overflow: hidden;
   box-shadow: var(--shadow-lg);
 }
-.motor-img img { width: 100%; height: 380px; object-fit: cover; }
+.motor-img img { width: 100%; height: 380px; object-fit: cover; object-position: center; }
 .motor-sub-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
